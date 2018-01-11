@@ -8,7 +8,7 @@ router.post('/users', (req, res, next) => {
       return next(err)
     }
 
-    res.status(201).send(user)
+    res.status(201).send([ user.name, user.email, user.createdAt, user.updatedAt ])
   })
 })
 

@@ -9,7 +9,8 @@ router.post('/users', (req, res, next) => {
       return next(err)
     }
 
-    res.status(201).send([ user.name, user.email, user.createdAt, user.updatedAt ])
+    const { name, email, _id, createdAt, updatedAt } = user
+    res.status(201).send({ name, email, _id, createdAt, updatedAt })
   })
 })
 

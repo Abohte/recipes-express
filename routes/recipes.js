@@ -26,5 +26,36 @@ router.get('/recipes', (req, res, next) => {
       .then((recipe) => res.json(recipe))
       .catch((error) => next(error))
   })
+  .put('/recipes/:id', authenticate, (req, res, next) => {
+    const id = req.params.id
+    const updatedRecipe = req.body
+
+    Recipe.findByIdAndUpdate(id, { $set: updatedRecipe }, { new: true })
+      .then((recipe) => res.json(recipe))
+      .catch((error) => next(error))
+  })
+  .patch('/recipes/:id', authenticate, (req, res, next) => {
+    const id = req.params.id
+    const updatedRecipe = req.body
+
+    Recipe.findByIdAndUpdate(id, { $set: updatedRecipe }, { new: true })
+      .then((recipe) => res.json(recipe))
+      .catch((error) => next(error))
+  })
+  .delete('/recipes/:id', authenticate, (req, res, next) => {
+    const id = req.params.id
+    Recipe.findByIdAndRemove(id)
+    .then((recipe) => res.json(recipe))
+
+    // or:
+    //   res.status = 200
+    //   res.json({
+    //     message: 'Removed',
+    //     _id: id
+    //   })
+    
+    .catch((error) => next(error))
+  })
+})
 
 module.exports = router

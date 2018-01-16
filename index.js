@@ -12,10 +12,20 @@ app
   .use(bodyParser.json())
   .use(passport.initialize())
 
+
+  .use(function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*')
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+    res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE')
+    next()
+  })
+  
   // Our recipes routes
   .use(sessions)
   .use(users)
   .use(recipes)
+
+
 
   // catch 404 and forward to error handler
   .use((req, res, next) => {

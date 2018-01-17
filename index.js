@@ -13,13 +13,13 @@ app
   .use(passport.initialize())
 
 
-  .use(function(req, res, next) {
+  .use(function(req, res, next) { //or .use(cors()) and install/require CORS
     res.header('Access-Control-Allow-Origin', '*')
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization')
     res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE')
     next()
   })
-  
+
   // Our recipes routes
   .use(sessions)
   .use(users)

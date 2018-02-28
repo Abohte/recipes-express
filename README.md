@@ -21,7 +21,7 @@ While working on this app we followed these steps:
 
 ## Running Locally
 
-Make sure you have [Node.js](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com/lang/en/) installed and the [backend](https://github.com/Abohte/recipes-express) running.
+Make sure you have [Node.js](https://nodejs.org/en/) and [Yarn](https://yarnpkg.com/lang/en/) installed.
 
 ```bash
 git clone git@github.com:Abohte/recipes-express.git

@@ -2,7 +2,7 @@
 
 React app made during week 5-6 of the 9-week Codaisseur Academy. The frontend for this app can be found [here](https://github.com/Abohte/recipes-react).
 
-This app, that contains a list of recipes, was meant to get to know React / Redux, Express, MongoDB and Material-UI.
+This app, containing a list of recipes, was an exercise to get to know React / Redux, Express, MongoDB and Material-UI.
 
 ![Recipes Overview Page](images/RecipesOverview.png)
 ![Recipe Page](images/Recipe.png)
